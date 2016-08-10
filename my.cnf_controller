@@ -1,0 +1,25 @@
+
+#
+# This group is read both both by the client and the server
+# use it for options that affect everything
+#
+[client-server]
+
+#
+# This group is read by the server
+#
+[mysqld]
+# Disabling symbolic-links is recommended to prevent assorted security risks
+symbolic-links=0
+bind-address = 10.0.0.11
+
+default-storage-engine = innodb
+innodb_file_per_table
+collation-server = utf8_general_ci
+init-connect = 'SET NAMES utf8'
+character-set-server = utf8
+
+#
+# include all files from the config directory
+#
+!includedir /etc/my.cnf.d
