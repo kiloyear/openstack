@@ -1,0 +1,10 @@
+[DEFAULT]
+admin_token = 07ba2740f2475a2165a5
+verbose = True
+[database]
+connection = mysql://keystone:KEYSTONE_DBPASS@controller/keystone
+[token]
+provider = keystone.token.providers.uuid.Provider
+driver = keystone.token.persistence.backends.sql.Token
+[revoke]
+driver = keystone.contrib.reboke.backends.sql.Revoke
